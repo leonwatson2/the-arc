@@ -4,8 +4,11 @@ let elaspedTime = 0;
 const playPauseButton = document.getElementById('switchNotes');
 const paper = document.getElementById('paper');
 const unmute = document.getElementById('unmute');
+const chosenTime = document.URL.split('#');
+const duration =  isNaN(+chosenTime[1]) ? 15: +chosenTime[1] // in minutes
+console.log(duration)
 const settings = {
-  duration: 5, // minutes
+  duration,
   totalLoops: 100,
   playing: false,
   startTime: new Date().getTime(),
