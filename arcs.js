@@ -1,30 +1,30 @@
-let arcs2 = [
-    // 21 colors that make a gradient of light green
+export let arcs = [
+    // 21 colors that make a rainbow
     // eg { color: #dddddd }
     {color: "#FF0000"},
-    {color: "#FF0C00"},
-    {color: "#FF1900"},
-    {color: "#FF2500"},
-    {color: "#FF3200"},
-    {color: "#FF3E00"},
-    {color: "#FF4B00"},
-    {color: "#FF5700"},
-    {color: "#FF6400"},
-    {color: "#FF7000"},
-    {color: "#FF7D00"},
-    {color: "#FF8900"},
-    {color: "#FF9600"},
-    {color: "#FFA200"},
-    {color: "#FFAF00"},
-    {color: "#FFBB00"},
-    {color: "#FFC800"},
-    {color: "#FFD400"},
-    {color: "#FFE100"},
-    {color: "#FFED00"},
-    {color: "#FFFF00"}
+    {color: "#FF7700"},
+    {color: "#FFEE00"},
+    {color: "#77FF00"},
+    {color: "#00FF00"},
+    {color: "#00FF77"},
+    {color: "#00FFEE"},
+    {color: "#00FFFF"},
+    {color: "#00EEFF"},
+    {color: "#00AAFF"},
+    {color: "#0077FF"},
+    {color: "#0000FF"},
+    {color: "#7700FF"},
+    {color: "#EE00FF"},
+    {color: "#FF00FF"},
+    {color: "#FF00EE"},
+    {color: "#FF00AA"},
+    {color: "#FF0077"},
+    {color: "#FF0000"},
+    {color: "#FF7700"},
+    {color: "#FFEE00"},
 ];
 
-export let arcs = [
+export let arcs2 = [
     // 30 colors that make a gradient of dark purple
     // eg { color: #dddddd }
     {color: "#FF00FF"},
