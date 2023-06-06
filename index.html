@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Arc</title>
+</head>
+<body>
+    <header>
+        <button id="switchNotes">Play</button>
+        <h4 id="unmute">Click anywhere to unmute</h4>        
+    </header>
+    <canvas id="paper"></canvas>
+</body>
+<style>
+    @font-face {
+        font-family: 'Rubic';
+        src: url('/Rubik/static/Rubik-Medium.ttf') format('ttf') tech('variations');
+        font-weight: 100 1000;
+        font-stretch: 25% 151%;
+    }
+    :root{
+        --main-color: rgba(200,0,255, 1);
+        --light-main-color: rgba(200,0,255, .5);
+    }
+    html, body {
+        font-family: 'Rubic', sans-serif;;
+        color-scheme: dark light;   
+    }
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    #unmute {
+        position: absolute;
+        padding: 5px 10px;
+        border-radius: 3px;
+        top: 25vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        background-color: rgba(0,0,0, 0);
+        border: var(--light-main-color) 1px solid;
+        z-index: 100;
+        opacity: .65;
+        transition: all 0.3s ease-in-out;
+    }
+    #unmute.hidden{
+        opacity: 0;
+        pointer-events: none;
+    }
+    .slider {
+        margin-left: 10px;
+        position: absolute;
+        right: 20px;
+        -webkit-appearance: none;
+        height: 25px;
+        outline: none;
+        opacity: 0.7;
+        background-color: transparent;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+        top: 0;
+        left: 0;
+    }
+    .slider:hover {
+        opacity: 1;
+    }
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        position: relative;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: #CC00FF;
+        cursor: pointer;
+    }
+    .slider::after{
+        content: "";
+        position: relative;
+        width: 150px;
+        background-color: transparent;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 10px;
+        border: 1px solid rgba(200,0,255,.5);
+    }
+    button {
+        background-color: transparent;
+        border: 1px solid rgba(200,0,255,.5);
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    button:focus, 
+    button:hover {
+        background-color: var(--light-main-color);
+        color: white;
+    }
+    #paper {
+        width: 100vw;
+        height: 100vh;
+    }
+    @media (prefers-color-scheme: light){
+        #unmute {
+            color:rgba(0,0,0,0)
+        }
+    }
+</style>
+<script type="module" src="/node_modules/tone/build/Tone.js" defer></script>
+<script src="/notes.js"></script>
+<script type="module" src="/index.js" defer></script>
+</html>
